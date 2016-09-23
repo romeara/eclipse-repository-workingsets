@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?after=additions">
+         <menu
+               id="com.rsomeara.eclipse.repository.workingsets.repositoryWorkingSets"
+               label="%menu.label">
+            <command
+                  commandId="com.rsomeara.eclipse.repository.workingsets.assignWorkingSets"
+                  label="%command.label"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.rsomeara.eclipse.repository.workingsets.handlers.AssignHandler"
+            commandId="com.rsomeara.eclipse.repository.workingsets.assignWorkingSets">
+      </handler>
+   </extension>
+
+</plugin>

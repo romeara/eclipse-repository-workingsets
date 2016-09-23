@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.rsomeara.eclipse.repository.workingsets.feature"
+      label="Working Set Assignment from Git Repositories"
+      version="1.0.0.0"
+      provider-name="Ryan O&apos;Meara"
+      plugin="com.rsomeara.eclipse.repository.workingsets">
+
+   <description url="http://www.example.com/description">
+      Adds the ability to automatically assign working sets for projects based on the Git repository they were imported from
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="com.rsomeara.eclipse.repository.workingsets"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
