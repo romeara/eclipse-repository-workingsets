@@ -1,3 +1,14 @@
+/* *****************************************************************************
+ * Copyright (c) 2016 romeara@live.com.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    romeara@live.com - initial API and implementation and/or initial documentation
+ *******************************************************************************/
+
 package com.rsomeara.eclipse.repository.workingsets.handlers;
 
 import java.util.ArrayList;
@@ -19,10 +30,8 @@ import org.eclipse.jdt.internal.ui.JavaPlugin;
 import org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart;
 import org.eclipse.jdt.internal.ui.workingsets.IWorkingSetIDs;
 import org.eclipse.jdt.internal.ui.workingsets.WorkingSetModel;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkingSet;
@@ -75,21 +84,15 @@ public class AssignHandler implements IHandler {
 
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection currentSelection = (IStructuredSelection) selection;
-			Shell shell = HandlerUtil.getActiveShell(event);
 
 			Collection<IProject> projects = getSelectedProjects(currentSelection);
 			Map<IProject, String> repositories = getProjectRepositoryNames(projects);
 			Map<String, IWorkingSet> workingSets = getAllWorkingSets();
 
-			removeFromAllWorkingSets(projects, workingSets);
-
 			Map<String, IWorkingSet> relevantWorkingSets = createOrFindRelevantWorkingSets(repositories, workingSets);
 			addToWorkingSets(repositories, relevantWorkingSets);
 
 			activateWorkingSets(relevantWorkingSets.values());
-
-			MessageDialog.openInformation(shell, "Repository Working Sets",
-					repositories.size() + " projects assigned to " + relevantWorkingSets.size() + " working sets");
 		}
 
 		return null;
@@ -203,23 +206,6 @@ public class AssignHandler implements IHandler {
 		}
 
 		return relevantWorkingSets;
-	}
-
-	/**
-	 * Removes the provided projects from all working sets, clearing their
-	 * assignment state
-	 * 
-	 * @param projects
-	 *            The projects to assign
-	 * @param existingSets
-	 *            The existing working sets within the workspace
-	 */
-	private void removeFromAllWorkingSets(Collection<IProject> projects, Map<String, IWorkingSet> existingSets) {
-		for (IWorkingSet workingSet : existingSets.values()) {
-			Collection<IAdaptable> elements = new ArrayList<>(Arrays.asList(workingSet.getElements()));
-			elements.removeAll(projects);
-			workingSet.setElements(elements.toArray(new IAdaptable[elements.size()]));
-		}
 	}
 
 	/**
