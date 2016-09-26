@@ -12,7 +12,7 @@ The Repository Working Set plug-in is hosted via Eclipse update site at the addr
 
 The plug-in adds a context menu to the Java package explorer window - simply right-click on any selection of projects and find the entry:
 
-[alt text](docs/PopupMenu.png)
+[alt text](/docs/PopupMenu.png)
 
 Clicking the entry will take all selected projects and add them to a working set named the same as the repository the project with imported from. Working sets will be created if they do not already exist, and projects not imported from a known source control system will not be moved
 
