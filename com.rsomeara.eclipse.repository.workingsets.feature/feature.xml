@@ -2,7 +2,7 @@
 <feature
       id="com.rsomeara.eclipse.repository.workingsets.feature"
       label="Working Set Assignment from Git Repositories"
-      version="1.0.0.0"
+      version="1.0.0.1"
       provider-name="Ryan O&apos;Meara"
       plugin="com.rsomeara.eclipse.repository.workingsets">
 

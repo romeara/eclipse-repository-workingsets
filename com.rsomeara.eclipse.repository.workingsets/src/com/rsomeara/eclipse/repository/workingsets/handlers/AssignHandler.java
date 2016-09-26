@@ -199,6 +199,7 @@ public class AssignHandler implements IHandler {
 				workingSet = workingSetManager.createWorkingSet(repositoryName, new IAdaptable[] {});
 				workingSet.setId(IWorkingSetIDs.RESOURCE);
 				workingSetManager.addWorkingSet(workingSet);
+				existingSets.put(repositoryName, workingSet);
 			}
 
 			relevantWorkingSets.put(workingSet.getLabel(), workingSet);
