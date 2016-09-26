@@ -2,6 +2,8 @@
 
 Plug-in for the Eclipse IDE platform which allows 1-click sorting of projects into working sets based on the source repository
 
+See recent activity in the [Change Log](CHANGELOG.md)
+
 # Installation
 
 The Repository Working Set plug-in is hosted via Eclipse update site at the address:
