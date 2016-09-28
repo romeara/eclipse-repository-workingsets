@@ -8,7 +8,7 @@ See recent activity in the [Change Log](CHANGELOG.md)
 
 The Repository Working Set plug-in is hosted via Eclipse update site at the address:
 
-`https://raw.githubusercontent.com/romeara/eclipse-repository-workingsets/master/com.rsomeara.eclipse.repository.workingsets.site`
+`https://raw.githubusercontent.com/romeara/eclipse-repository-workingsets/latest-release/com.rsomeara.eclipse.repository.workingsets.site/`
 
 # Use
 

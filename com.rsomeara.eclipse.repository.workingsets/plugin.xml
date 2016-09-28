@@ -15,6 +15,21 @@
                   label="%command.label"
                   style="push">
             </command>
+            <visibleWhen
+                  checkEnabled="false">
+              <with
+                    variable="activeMenuSelection">
+                 <iterate>
+                    <or>
+                       <instanceof
+                             value="org.eclipse.jdt.core.IJavaProject">
+                       </instanceof>
+                       <instanceof
+                             value="org.eclipse.core.resources.IProject">
+                       </instanceof>
+                    </or></iterate>
+              </with>
+            </visibleWhen>
          </menu>
       </menuContribution>
    </extension>
